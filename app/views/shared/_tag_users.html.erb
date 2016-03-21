@@ -1,0 +1,15 @@
+<h3>Tags: (<%= tag.users.count %>):</h3>
+
+<div class="row">
+  <% if users.any? %>
+      <ul class="users">
+        <% users.each do |user| %>
+            <li>
+              <%= user.name %>
+            </li>
+        <% end %>
+      </ul>
+  <% else %>
+   Tag doesn't have any user assigned yet.
+  <% end %>
+</div>

@@ -4,6 +4,8 @@
   <strong>Name:</strong>
   <%= @tag.name %>
 </p>
-
+<div class="span8">
+  <%= render 'shared/tag_users', {:users => @tag.users, :tag => @tag} %>
+</div>
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
 <%= link_to 'Back', tags_path %>
