@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :tags
-  resources :tags
   resources :posts
   get 'posts/destroy'
 
