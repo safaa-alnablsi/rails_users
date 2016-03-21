@@ -7,7 +7,13 @@
             </section>
             <section>
               <h2>Start Adding new Posts, <%= link_to ' HERE !', 'posts/new' %></h2>
-              <%= render 'shared/user_posts', :user => current_user %>
+
+              <div class="span8">
+                <%= render 'shared/user_tags', {:tags => current_user.tags , :user => current_user}%>
+              </div>
+              <div class="span8">
+                <%= render 'shared/user_posts', :user => current_user %>
+              </div>
             </section>
 
         <% end %>

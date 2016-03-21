@@ -1,0 +1,15 @@
+<h3>Tags: (<%= user.tags.count %>):</h3>
+
+<div class="row">
+  <% if tags.any? %>
+      <ul class="tags">
+        <% tags.each do |tag| %>
+            <li>
+              <%= tag.name %>
+            </li>
+        <% end %>
+      </ul>
+  <% else %>
+   User doesn't have any tag yet.
+  <% end %>
+</div>

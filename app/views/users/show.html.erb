@@ -8,6 +8,10 @@
   <section>
     <%= render 'follow_form' if signed_in? %>
     <div class="span8">
+      <%= render 'shared/user_tags', {:tags => @user.tags , :user => @user}%>
+    </div>
+
+    <div class="span8">
       <%= render 'shared/user_posts', :user => @user %>
     </div>
   </section>

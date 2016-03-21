@@ -9,13 +9,12 @@ Rails.application.routes.draw do
 
   get 'posts/edit'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations"}
 
   get 'users/show/:id' => 'users#show', :as => :show_user
   get 'users/following/:id' => 'users#following', :as => :following_user
   get 'users/followers/:id' => 'users#followers', :as => :followers_user
-
-
+  #get '/users/tags/:id' => 'users#tags', :as => :tags_user
 
   get 'users/index'
 
