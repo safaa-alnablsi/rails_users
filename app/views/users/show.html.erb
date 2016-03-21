@@ -1,0 +1,15 @@
+<p id="notice" xmlns="http://www.w3.org/1999/html"><%= notice %></p>
+<div class="row">
+  <section>
+    <h1>
+      <%= @user.name %> </h1>
+  </section>
+  <%= render 'shared/stats', :user => @user %>
+  <section>
+    <%= render 'follow_form' if signed_in? %>
+    <div class="span8">
+      <%= render 'shared/user_posts', :user => @user %>
+    </div>
+  </section>
+</div>
+<%= link_to 'Back', root_path %>

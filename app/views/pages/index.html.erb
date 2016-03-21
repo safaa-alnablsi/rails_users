@@ -1,0 +1,16 @@
+<% content_for :top_content do %>
+    <div class="jumbotron">
+      <div class="container">
+        <% if user_signed_in? %>
+            <section>
+              <%= render 'shared/stats', :user => current_user %>
+            </section>
+            <section>
+              <h2>Start Adding new Posts, <%= link_to ' HERE !', 'posts/new' %></h2>
+              <%= render 'shared/user_posts', :user => current_user %>
+            </section>
+
+        <% end %>
+      </div>
+    </div>
+<% end %>

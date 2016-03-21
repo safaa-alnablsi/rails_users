@@ -1,0 +1,23 @@
+<% if user_signed_in? %>
+    <h1>Welcome!</h1>
+    <h4>All Users:</h4>
+    <% @users = User.all %>
+    <table class="table">
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= link_to 'Show', show_user_path(user) %></td>
+            <td><%= render 'shared/stats', :user => user %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>

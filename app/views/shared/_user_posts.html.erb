@@ -1,0 +1,23 @@
+</br>
+<div class="span8">
+  <h3> Posts (<%= user.posts.count %>):</h3>
+  <br/>
+  <% if user.posts.any? %>
+      <ol class="posts">
+      <% @posts = user.posts %>
+      <% @posts.each do |post| %>
+          <div class="dotted">
+            Content: <%= post.content %>
+            <% if current_user == user %>
+            <span style="float: right;"><%= link_to 'Edit', edit_post_path(post) %>
+              &nbsp;&nbsp;
+              <%= link_to 'Destroy', post, method: :delete, data: {confirm: 'Are you sure?'} %></span>
+                <% end %>
+          </div>
+          <br/>
+      <% end %>
+  <% else %>
+      User has no posts yet!
+  <% end %>
+  </ol>
+</div>
